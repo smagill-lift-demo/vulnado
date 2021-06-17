@@ -82,7 +82,7 @@ public class Postgres {
         }
 
         // For specifying wrong message digest algorithms
-        catch (NoSuchAlgorithmException e) {
+        catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
