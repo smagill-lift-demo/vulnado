@@ -64,11 +64,11 @@ public class Postgres {
         try {
 
             // Static getInstance method is called with hashing MD5
-            MessageDigest md = MessageDigest.getInstance("MD5");
+            MessageDigest md = MessageDigest.getInstance("SHA256");
 
             // digest() method is called to calculate message digest
             //  of an input digest() return array of byte
-            byte[] messageDigest = md.digest(input.getBytes());
+            byte[] messageDigest = md.digest(input.getBytes("UTF-8"));
 
             // Convert byte array into signum representation
             BigInteger no = new BigInteger(1, messageDigest);
